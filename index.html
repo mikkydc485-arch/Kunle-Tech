@@ -10,6 +10,7 @@
 <meta name="keywords" content="content creator, youtuber, tiktoker, influencer, brand collaboration, digital creator">
 
 <meta name="author" content="Kunle-Tech">
+<link rel="icon"  href="Images/tech.jpeg">
 
 <meta name="robots" content="index, follow">
 
@@ -75,7 +76,7 @@
 
       <div class="hero-buttons">
         <a href="https://wa.me/+2347034204906" class="btn primary">Hire Me</a>
-        <a href="#projects" class="btn secondary">View My Work</a>
+        <a href="#project" class="btn secondary">View My Work</a>
       </div>
     </div>
 
@@ -112,7 +113,6 @@ const sideNav=document.getElementById("sideNav");
 function openNav(){gsap.to(sideNav,{x:0,duration:.6,ease:"power4.out"})}
 function closeNav(){gsap.to(sideNav,{x:"-100%",duration:.6,ease:"power4.in"})}
 </script>
-
 
 <!-- ABOUT ME SECTION -->   
 <section class="about-section" id="about">
@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- PROJECT 1 -->
         <div class="project-slide">
-          <img src="Images/creator.PNG" alt="FIRST SITE">
+          <img src="Images/creator.png" alt="">
           <div class="project-info">
             <h3>Content Creator Portfolio</h3>
             <p>
@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- PROJECT 3 -->
         <div class="project-slide">
-          <img src="Images/bbb.PNG" alt="SECOND SITE">
+          <img src="Images/bbb.png" alt="">
           <div class="project-info">
             <h3>Business Landing Page</h3>
             <p>
@@ -433,37 +433,200 @@ const statsObserver = new IntersectionObserver(entries => {
 
 counters.forEach(counter => statsObserver.observe(counter));
 </script>
-<section class="contact-section" id="contact">
-  <div class="contact-container">
-    <h2>Contact Me</h2>
-    <p>Send me a message and I’ll get back to you via WhatsApp!</p>
+<section class="testimonials">
+  <p class="subtitle">Trusted by clients worldwide</p>
 
-    <form id="whatsappForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send via WhatsApp</button>
-    </form>
-
+  <div class="slider-wrapper">
+    <div class="testimonial-track" id="testimonialTrack"></div>
   </div>
 </section>
+
+<section class="contact-section" id="contact">
+<div class="container">
+  <h2>Start Your Project with KUNLETECH</h2>
+  <div class="progress-bar"><div class="progress" id="progress"></div></div>
+
+  <form id="wizardForm">
+
+    <!-- Step 1: Project Basics -->
+    <div class="step active">
+      <label for="type">Project Type</label>
+      <select name="project_type" id="type" required>
+        <option value="">Select Project Type</option>
+        <option value="Website Development">Website Development</option>
+        <option value="Mobile App">Mobile App</option>
+        <option value="Branding / Design">Branding / Design</option>
+        <option value="Automation / Software">Automation / Software</option>
+        <option value="Consulting">Consulting</option>
+        <option value="E-commerce">E-commerce</option>
+        <option value="SEO / Marketing">SEO / Marketing</option>
+        <option value="SaaS Application">SaaS Application</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="budget">Project Budget</label>
+      <select name="project_budget" id="budget" required>
+        <option value="">Select Budget</option>
+        <option value="Under $500">Under $500</option>
+        <option value="$500 – $1,500">$500 – $1,500</option>
+        <option value="$1,500 – $3,000">$1,500 – $3,000</option>
+        <option value="$3,000 – $5,000">$3,000 – $5,000</option>
+        <option value="$5,000 – $10,000">$5,000 – $10,000</option>
+        <option value="$10,000+">$10,000+</option>
+      </select>
+
+      <button type="button" id="next1">Next</button>
+    </div>
+
+    <!-- Step 2: Timeline & Priority -->
+    <div class="step">
+      <label for="timeline">Expected Timeline</label>
+      <select name="timeline" id="timeline" required>
+        <option value="">Select Timeline</option>
+        <option value="1-2 Weeks">1-2 Weeks</option>
+        <option value="3-4 Weeks">3-4 Weeks</option>
+        <option value="1-2 Months">1-2 Months</option>
+        <option value="2-3 Months">2-3 Months</option>
+        <option value="3+ Months">3+ Months</option>
+      </select>
+
+      <label for="priority">Project Priority</label>
+      <select name="priority" id="priority">
+        <option value="">Select Priority</option>
+        <option value="Low">Low</option>
+        <option value="Normal">Normal</option>
+        <option value="High">High</option>
+        <option value="Urgent">Urgent</option>
+      </select>
+
+      <label for="industry">Industry / Sector</label>
+      <select name="industry" id="industry">
+        <option value="">Select Industry</option>
+        <option value="Technology">Technology</option>
+        <option value="Finance / Banking">Finance / Banking</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Education">Education</option>
+        <option value="Retail / E-commerce">Retail / E-commerce</option>
+        <option value="Startup">Startup</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <button type="button" id="prev2">Previous</button>
+      <button type="button" id="next2">Next</button>
+    </div>
+
+    <!-- Step 3: Platform & Features -->
+    <div class="step">
+      <label for="platform">Platform / Devices</label>
+      <select name="platform" id="platform">
+        <option value="">Select Platform</option>
+        <option value="Web">Web</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Web + Mobile">Web + Mobile</option>
+        <option value="Desktop">Desktop Application</option>
+      </select>
+
+      <label>Features Required</label>
+      <div class="features">
+        <label><input type="checkbox" name="features" value="Login System"> Login System</label>
+        <label><input type="checkbox" name="features" value="Payment Gateway"> Payment Gateway</label>
+        <label><input type="checkbox" name="features" value="Admin Panel"> Admin Panel</label>
+        <label><input type="checkbox" name="features" value="Analytics Dashboard"> Analytics Dashboard</label>
+        <label><input type="checkbox" name="features" value="Chat / Messaging"> Chat / Messaging</label>
+        <label><input type="checkbox" name="features" value="Social Integration"> Social Integration</label>
+        <label><input type="checkbox" name="features" value="API Integration"> API Integration</label>
+        <label><input type="checkbox" name="features" value="Other"> Other</label>
+      </div>
+
+      <label for="description">Project Description</label>
+      <textarea name="description" id="description" placeholder="Briefly describe your project" required></textarea>
+
+      <button type="button" id="prev3">Previous</button>
+      <button type="button" id="next3">Next</button>
+    </div>
+
+    <!-- Step 4: Contact Info & References -->
+    <div class="step">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" placeholder="Full Name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" placeholder="Email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+
+      <label for="reference">Attach Reference (Optional)</label>
+      <input type="file" name="reference" id="reference" multiple>
+
+      <button type="button" id="prev4">Previous</button>
+      <button type="submit">Send via WhatsApp</button>
+    </div>
+
+  </form>
+
+  <p class="thank-msg" id="thankMsg">✅ Redirecting to WhatsApp...</p>
+</div>
+
 <script>
-document.getElementById('whatsappForm').addEventListener('submit', function(e){
+const whatsappNumber = "2347034204906"; // Replace with your number
+const steps = document.querySelectorAll(".step");
+const progress = document.getElementById("progress");
+let currentStep = 0;
+
+function showStep(step){
+  steps.forEach((s,i)=>s.classList.toggle("active",i===step));
+  progress.style.width=((step+1)/steps.length*100)+"%";
+}
+
+// Step buttons
+document.getElementById("next1").onclick = ()=>{showStep(currentStep=1);}
+document.getElementById("prev2").onclick = ()=>{showStep(currentStep=0);}
+document.getElementById("next2").onclick = ()=>{showStep(currentStep=2);}
+document.getElementById("prev3").onclick = ()=>{showStep(currentStep=1);}
+document.getElementById("next3").onclick = ()=>{showStep(currentStep=3);}
+document.getElementById("prev4").onclick = ()=>{showStep(currentStep=2);}
+
+// WhatsApp submission
+const form = document.getElementById("wizardForm");
+const thankMsg = document.getElementById("thankMsg");
+
+form.addEventListener("submit", e=>{
   e.preventDefault();
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+  const features = [...document.querySelectorAll('input[name="features"]:checked')].map(f=>f.value).join(", ")||"None";
+  const message = `
+Hello! I want to start a project with KUNLETECH:
 
-  if(name && email && message){
-    const phoneNumber = "+2347034204906"; // your WhatsApp number in international format without + or 0
-    const text = `Hello, my name is ${name} (${email}). Message: ${message}`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+Project Type: ${form.project_type.value}
+Budget: ${form.project_budget.value}
+Timeline: ${form.timeline.value}
+Priority: ${form.priority.value || "Normal"}
+Industry: ${form.industry.value || "Not specified"}
+Platform: ${form.platform.value || "Not specified"}
+Features: ${features}
+Description: ${form.description.value}
+Name: ${form.name.value}
+Email: ${form.email.value}
+Phone: ${form.phone.value}
+  `;
 
-    window.open(url, '_blank');
-  }
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  thankMsg.style.display="block";
+  window.open(url,"_blank");
+
+  setTimeout(()=>{
+    thankMsg.style.display="none";
+    form.reset();
+    showStep(currentStep=0);
+  },1000);
 });
 </script>
+
+</body>
+</html>
+
+</section>
 <!-- FOOTER -->
 <footer class="footer-section">
   <div class="footer-container">
@@ -535,8 +698,72 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 });
 
 </script>
-</body>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const track = document.getElementById("testimonialTrack");
+  let index = 0;
+
+  const testimonials = [
+    {n:"Daniel Brooks", r:"Startup Founder", s:5, c:"KUNLETECH exceeded expectations."},
+    {n:"Aisha Bello", r:"Brand Strategist", s:5, c:"Very professional delivery."},
+    {n:"Mark Evans", r:"Product Lead", s:4, c:"Reliable and skilled."},
+    {n:"Fatima Yusuf", r:"Marketing Consultant", s:5, c:"Excellent communication."},
+    {n:"James Wilson", r:"CTO", s:5, c:"Top-tier technical execution."},
+    {n:"Michael Ade", r:"CEO", s:5, c:"Outstanding service."},
+    {n:"Zainab Musa", r:"Business Owner", s:5, c:"Highly recommended."},
+    {n:"Chris Nolan", r:"Agency Manager", s:4, c:"Very responsive."},
+    {n:"Olivia Chen", r:"Product Manager", s:5, c:"Exceeded expectations."},
+    {n:"Samuel Okoye", r:"Operations Lead", s:5, c:"Professional work."},
+    {n:"Nora Hassan", r:"Digital Marketer", s:5, c:"Creative solutions."},
+    {n:"Victor Stone", r:"Business Analyst", s:4, c:"Strong attention to detail."},
+    {n:"Emma Johnson", r:"Founder", s:4, c:"Smooth delivery."},
+    {n:"Abdul Kareem", r:"IT Manager", s:5, c:"Reliable partner."},
+    {n:"Linda Park", r:"Product Owner", s:4, c:"Well executed."},
+    {n:"Mohammed Ali", r:"Startup CTO", s:5, c:"Great experience."},
+    {n:"Grace Williams", r:"Agency Owner", s:5, c:"Would hire again."},
+    {n:"Kelvin Brown", r:"Project Manager", s:4, c:"Efficient workflow."},
+    {n:"Aminu Sadiq", r:"Consultant", s:5, c:"Very dependable."},
+    {n:"Rebecca Stone", r:"Designer", s:5, c:"Top quality work."}
+  ];
+
+  function render() {
+    track.innerHTML = "";
+    testimonials.forEach(t => {
+      track.innerHTML += `
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/150?u=${t.n}">
+          <div class="stars">${"★".repeat(t.s)}${"☆".repeat(5 - t.s)}</div>
+          <p>${t.c}</p>
+          <h4>${t.n}</h4>
+          <span>${t.r}</span>
+        </div>
+      `;
+    });
+  }
+
+  render();
+
+  function visibleCards() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  function slide() {
+    const cardWidth = track.children[0].offsetWidth + 20;
+    index++;
+    if (index > testimonials.length - visibleCards()) index = 0;
+    track.style.transform = `translateX(${-index * cardWidth}px)`;
+  }
+
+  setInterval(slide, 3000);
+});
+</script>
+
+</body>
 </html>
 
-
+</body>
+</html>
